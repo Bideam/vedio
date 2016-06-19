@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+body{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.videos{
+	position:relative;
+}
+.video{
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.local-video{
+	z-index:1;
+	border:1px solid black;
+}
+
+</style>
+<body>
+<h1>Browser video chat</h1>
+<!-- 显示聊天室名称-->
+<p id="room-name"></p>
+<!--创建控制按钮-->
+<input type="button" value="开始" id="start-call">
+<input type="button" value="加入" id="join-call">
+<!--显示本地和远程视频流-->
+<div class="videos">
+	<video class="video local-video" id="local-video" width="200px;" autoplay muted></video>
+    <video class="video" id="remote-video" width="600px;" autoplay></video>
+</div>
+
+<!--实现firebase支持-->
+
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDXgTQBhJqCtGJMdYLLRkYXNFWhjHqSglo",
+    authDomain: "project-456776323243929447.firebaseapp.com",
+    databaseURL: "https://project-456776323243929447.firebaseio.com",
+    storageBucket: "project-456776323243929447.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+    
+<!--加载videochat类-->
+<script src="classvideo.js"></script>
+
+<script src="exclass.js"></script>
+</body>
+</html>
